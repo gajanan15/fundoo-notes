@@ -1,3 +1,4 @@
+import { FundooService } from './../../services/user_service/fundoo.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   hide = true;
-  constructor(private snackbar: MatSnackBar, private router: Router) {}
+  constructor(private httpPost: FundooService, private snackbar: MatSnackBar) {}
 
+  cartID: string = '';
   ngOnInit(): void {}
 
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -36,7 +38,20 @@ export class LoginComponent implements OnInit {
   }
 
   onClicked() {
-    this.snackbar.open('Login Successful', 'end now', { duration: 4000 });
-    this.router.navigateByUrl('dashboard');
+    var data = {
+      cartID: this.cartID,
+      email: this.email.value,
+      password: this.password.value,
+    };
+    console.log('retetet:  ', data);
+    this.httpPost.conversionValue(data).subscribe(
+      (rep) => {
+        console.log('HIII  :   ', rep);
+        this.snackbar.open('Login Successful', 'end now', { duration: 4000 });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }
