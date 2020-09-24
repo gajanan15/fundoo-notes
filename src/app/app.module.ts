@@ -19,6 +19,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
+import { AddnoteComponent } from './component/addnote/addnote.component';
+import { TextFieldModule } from '@angular/cdk/text-field';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     HomeComponent,
     DashboardComponent,
+    AddnoteComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatListModule,
     HttpClientModule,
+    TextFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
