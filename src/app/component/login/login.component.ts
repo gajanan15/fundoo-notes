@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         email: this.email.value,
         password: this.password.value,
       };
-      this.httpPost.conversionValue(data).subscribe((resp) => {
+      this.httpPost.getUserLoggedIn(data).subscribe((resp) => {
         console.log('new Form HII  :   ', resp);
         this.snackbar.open('Login Successful', 'end now', { duration: 4000 });
         this.router.navigate(['home']);

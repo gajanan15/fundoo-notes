@@ -3,13 +3,13 @@
     class="example-container"
     [class.example-is-mobile]="mobileQuery.matches"
   >
-    <mat-toolbar class="example-toolbar">
+    <mat-toolbar class="example-toolbar" style="background-color: white">
       <div>
         <button mat-icon-button (click)="snav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
-      <div>
+      <div fxLayoutAlign="center center">
         <img
           style="padding-left: 20px; width: 30px; height: 30px; margin-top: 3%"
           src="../../../assets/keepIcon.jpg"
@@ -19,8 +19,18 @@
       <div>
         <h1 class="example-app-name">fundooNotes</h1>
       </div>
-      <div class="search">
-        <!-- <input type="text" placeholder="Search...."> -->
+      <div class="search" fxLayout="row">
+        <div class="img-icon" fxLayoutAlign="center center">
+          <img
+            width="60%"
+            height="60%"
+            style="color: gray; font-weight: 100"
+            src="../../../assets/searchIcon.png"
+          />
+        </div>
+        <div id="search-text-div">
+          <input id="serach-input" type="text" placeholder="Search...." />
+        </div>
       </div>
       <div class="userIcon" fxLayoutAlign="space-between end">
         <img src="../../../assets/userIcon.png" />
@@ -39,9 +49,14 @@
         style="width: 20%"
       >
         <mat-nav-list>
-          <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{
-            nav
-          }}</a>
+          <a
+            class="Notes"
+            mat-list-item
+            routerLink="."
+            *ngFor="let nav of fillerNav; let i = index"
+            [selected]="i == 0"
+            >{{ nav }}</a
+          >
         </mat-nav-list>
       </mat-sidenav>
       <div class="example-sidenav-content">Notes you add appear here</div>

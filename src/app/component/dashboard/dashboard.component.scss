@@ -11,7 +11,6 @@
 
 .example-is-mobile .example-toolbar {
   position: fixed;
-  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
   z-index: 2;
   background-color: white;
 }
@@ -29,7 +28,7 @@ h1.example-app-name {
 }
 
 .userIcon {
-  margin-left: 30%;
+  margin-left: 15%;
 }
 
 .search {
@@ -37,8 +36,8 @@ h1.example-app-name {
   margin-left: 10%;
   width: 35%;
   height: 55%;
-  border-radius: 5px;
-  background-color: white;
+  border-radius: 10px;
+  background-color: #f1f3f4;
   outline: none;
 }
 
@@ -47,4 +46,37 @@ h1.example-app-name {
   height: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.note-div {
+  margin-top: 2%;
+}
+
+.Notes {
+  font-size: 20px;
+  margin: 10px 0px 10px 0px;
+  opacity: 0.8;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.Notes:hover {
+  background-color: #feefc3;
+}
+
+#search-text-div {
+  height: 100%;
+  width: 90%;
+}
+
+#serach-input {
+  height: 99%;
+  width: 95%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.img-icon {
+  width: 10%;
+  height: 100%;
 }

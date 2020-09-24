@@ -9,7 +9,7 @@ export class FundooService {
   baseUrl = environment.apiUrl;
   constructor(private http: HttpService) {}
 
-  conversionValue(data) {
+  getUserLoggedIn(data) {
     return this.http.postService(data, this.baseUrl + `user/login`);
   }
 }
