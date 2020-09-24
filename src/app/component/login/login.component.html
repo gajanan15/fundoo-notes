@@ -19,83 +19,84 @@
       <h3>Use your Fundoo Account</h3>
     </div>
 
-    <div fxLayout="column" fxLayoutAlign="center center">
-      <mat-form-field
-        [style.fontSize.px]="15"
-        appearance="outline"
-        style="width: 90%"
-      >
-        <mat-label>Email or phone</mat-label>
-        <input
-          matInput
-          placeholder="Email"
-          name="email"
-          type="text"
-          [formControl]="email"
-          required
-        />
-        <mat-error *ngIf="email.invalid">{{
-          getErrorMessageForEmail()
-        }}</mat-error>
-      </mat-form-field>
+    <form (ngSubmit)="loginProcess()">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field
+          [style.fontSize.px]="15"
+          appearance="outline"
+          style="width: 90%"
+        >
+          <mat-label>Email or phone</mat-label>
+          <input
+            matInput
+            placeholder="Email"
+            name="email"
+            type="text"
+            [formControl]="email"
+            required
+          />
+          <mat-error *ngIf="email.invalid">{{
+            getErrorMessageForEmail()
+          }}</mat-error>
+        </mat-form-field>
 
-      <mat-form-field
-        [style.fontSize.px]="15"
-        appearance="outline"
-        style="width: 90%"
+        <mat-form-field
+          [style.fontSize.px]="15"
+          appearance="outline"
+          style="width: 90%"
+        >
+          <mat-label>Enter your password</mat-label>
+          <input
+            matInput
+            placeholder="Password"
+            name="password"
+            [type]="hide ? 'password' : 'text'"
+            [formControl]="password"
+            required
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-error *ngIf="password.invalid">{{
+            getErrorMessageForPassword()
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div
+        class="login-button"
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        fxLayoutGap="10%"
+      ></div>
+      <div
+        fxLayout="row"
+        fxLayoutAlign="space-between end"
+        style="padding-left: 5%; padding-right: 5%"
       >
-        <mat-label>Enter your password</mat-label>
-        <input
-          matInput
-          placeholder="Password"
-          name="password"
-          [type]="hide ? 'password' : 'text'"
-          [formControl]="password"
-          required
-        />
-        <button
-          mat-icon-button
-          matSuffix
-          (click)="hide = !hide"
-          [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide"
-        >
-          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-        </button>
-        <mat-error *ngIf="password.invalid">{{
-          getErrorMessageForPassword()
-        }}</mat-error>
-      </mat-form-field>
-    </div>
-    <div
-      class="login-button"
-      fxLayout="row"
-      fxLayoutAlign="center center"
-      fxLayoutGap="10%"
-    ></div>
-    <div
-      fxLayout="row"
-      fxLayoutAlign="space-between end"
-      style="padding-left: 5%; padding-right: 5%"
-    >
-      <div>
-        <a
-          href="http://fundoonotes.incubation.bridgelabz.com"
-          style="font-size: 18px; text-decoration: none"
-          target="_blank"
-          >Create Account</a
-        >
+        <div>
+          <a
+            href="http://fundoonotes.incubation.bridgelabz.com"
+            style="font-size: 18px; text-decoration: none"
+            target="_blank"
+            >Create Account</a
+          >
+        </div>
+        <div fxLayoutAlign="end end">
+          <button
+            style="width: 25%; background-color: #1a73e8"
+            mat-flat-button
+            color="primary"
+          >
+            Log In
+          </button>
+        </div>
       </div>
-      <div fxLayoutAlign="end end">
-        <button
-          style="width: 25%; background-color: #1a73e8"
-          mat-flat-button
-          color="primary"
-          (click)="onClicked()"
-        >
-          Log In
-        </button>
-      </div>
-    </div>
+    </form>
   </mat-card>
 </div>

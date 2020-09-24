@@ -2,7 +2,6 @@ import { FundooService } from './../../services/user_service/fundoo.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -37,21 +36,20 @@ export class LoginComponent implements OnInit {
       : '';
   }
 
-  onClicked() {
-    var data = {
-      cartID: this.cartID,
-      email: this.email.value,
-      password: this.password.value,
-    };
-    console.log('retetet:  ', data);
-    this.httpPost.conversionValue(data).subscribe(
-      (rep) => {
-        console.log('HIII  :   ', rep);
+  loginProcess() {
+    if (this.email.valid && this.password.valid) {
+      var data = {
+        cartID: this.cartID,
+        email: this.email.value,
+        password: this.password.value,
+      };
+      this.httpPost.conversionValue(data).subscribe((resp) => {
+        console.log('new Form HII  :   ', resp);
         this.snackbar.open('Login Successful', 'end now', { duration: 4000 });
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+      }),
+        (error) => {
+          console.log('newERR: ', error);
+        };
+    }
   }
 }
