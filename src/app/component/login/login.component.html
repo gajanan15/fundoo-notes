@@ -1,46 +1,61 @@
-<div class="login-container">
-  <mat-card class="card">
-    <div class="label" fxLayout="row" fxLayoutAlign="center center">
-      <span class="blue">F</span>
-      <span class="red">u</span>
-      <span class="yellow">n</span>
-      <span class="blue">d</span>
-      <span class="green">o</span>
-      <span class="red">o</span>
+<div class="login-main" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card
+    fxFlex="33"
+    fxFlex.xs="70"
+    style="height: 75%; border: 1px solid lightgray"
+  >
+    <div class="login-heading" fxLayout="column" fxLayoutAlign="center center">
+      <mat-card-title style="margin-top: 5%">
+        <p>
+          <span class="f">f</span>
+          <span class="u">u</span>
+          <span class="n">n</span>
+          <span class="d">d</span>
+          <span class="o">o</span>
+          <span class="oo">o</span>
+          <span class="n">n</span>
+          <span class="o">o</span>
+          <span class="t">t</span>
+          <span class="e">e</span>
+        </p>
+      </mat-card-title>
+      <h1>Sign in</h1>
+      <h3>Use your Fundoo Account</h3>
     </div>
-    <mat-card-title fxLayout="row" fxLayoutAlign="center center">
-      <h3 class="sign-in">Sign in</h3>
-    </mat-card-title>
-    <mat-card-title fxLayout="row" fxLayoutAlign="center center">
-      <h3 class="continue">Continue to Fundoo</h3>
-    </mat-card-title>
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <mat-form-field
+        [style.fontSize.px]="15"
+        appearance="outline"
+        style="width: 90%"
+      >
+        <mat-label>Email or phone</mat-label>
         <input
           matInput
-          [formControl]="emailFormControl"
-          placeholder="Ex. pat@example.com"
+          placeholder="Email"
+          name="email"
+          type="text"
+          [formControl]="email"
+          required
         />
-        <mat-error
-          *ngIf="
-            emailFormControl.hasError('email') &&
-            !emailFormControl.hasError('required')
-          "
-        >
-          Please enter a valid email address
-        </mat-error>
-        <mat-error *ngIf="emailFormControl.hasError('required')">
-          Email is <strong>required</strong>
-        </mat-error>
+        <mat-error *ngIf="email.invalid">{{
+          getErrorMessageForEmail()
+        }}</mat-error>
       </mat-form-field>
+
       <mat-form-field
-        class="example-full-width"
-        appearance="fill"
-        style="background-color: white; padding: 0px"
+        [style.fontSize.px]="15"
+        appearance="outline"
+        style="width: 90%"
       >
         <mat-label>Enter your password</mat-label>
-        <input [formControl]="passwordFormControl" matInput [type]="hide ? 'password' : 'text'" />
+        <input
+          matInput
+          placeholder="Password"
+          name="password"
+          [type]="hide ? 'password' : 'text'"
+          [formControl]="password"
+          required
+        />
         <button
           mat-icon-button
           matSuffix
@@ -50,27 +65,41 @@
         >
           <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
-        <mat-error
-          *ngIf="
-            passwordFormControl.hasError('password') &&
-            !passwordFormControl.hasError('required')
-          "
-        >
-          Please enter a valid Password
-        </mat-error>
-        <mat-error *ngIf="passwordFormControl.hasError('required')">
-          Password is <strong>required</strong>
-        </mat-error>
+        <mat-error *ngIf="password.invalid">{{
+          getErrorMessageForPassword()
+        }}</mat-error>
       </mat-form-field>
-    </form>
-    <div fxLayoutAlign="end end">
-      <button style="width: 25%" mat-flat-button color="primary">Log In</button>
     </div>
-    <a
-      href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp"
-      style="font-size: 18px"
-      target="_blank"
-      >Create Account</a
+    <div
+      class="login-button"
+      fxLayout="row"
+      fxLayoutAlign="center center"
+      fxLayoutGap="10%"
+    ></div>
+    <div
+      fxLayout="row"
+      fxLayoutAlign="space-between end"
+      style="padding-left: 5%; padding-right: 5%"
     >
+      <div>
+        <a
+          href="http://fundoonotes.incubation.bridgelabz.com"
+          style="font-size: 18px; text-decoration: none"
+          target="_blank"
+          >Create Account</a
+        >
+      </div>
+      <div fxLayoutAlign="end end">
+        <a href="/home"
+          ><button
+            style="width: 25%; background-color: #1a73e8"
+            mat-flat-button
+            color="primary"
+          >
+            Log In
+          </button></a
+        >
+      </div>
+    </div>
   </mat-card>
 </div>
