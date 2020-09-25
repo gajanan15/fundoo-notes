@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddnoteComponent } from './component/addnote/addnote.component';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { ColorpaletteComponent } from './component/colorpalette/colorpalette.component';
+import { ArchiveComponent } from './component/archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ColorpaletteComponent } from './component/colorpalette/colorpalette.com
     DashboardComponent,
     AddnoteComponent,
     ColorpaletteComponent,
+    ArchiveComponent,
   ],
   imports: [
     BrowserModule,
