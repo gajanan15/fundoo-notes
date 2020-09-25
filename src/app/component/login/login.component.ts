@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   hide = true;
   constructor(private httpPost: FundooService, private router: Router) {}
-
+  toeknID;
   cartID: string = '';
   ngOnInit(): void {}
 
@@ -45,6 +45,8 @@ export class LoginComponent implements OnInit {
       };
       this.httpPost.getUserLoggedIn(data).subscribe((resp) => {
         console.log('new Form HII  :   ', resp);
+        this.toeknID = resp;
+        localStorage.setItem('token', JSON.stringify(this.toeknID.id));
         this.router.navigate(['home']);
       }),
         (error) => {
