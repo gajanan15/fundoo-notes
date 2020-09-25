@@ -1,7 +1,6 @@
 import { FundooService } from './../../services/user_service/fundoo.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,11 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   hide = true;
-  constructor(
-    private httpPost: FundooService,
-    private snackbar: MatSnackBar,
-    private router: Router
-  ) {}
+  constructor(private httpPost: FundooService, private router: Router) {}
 
   cartID: string = '';
   ngOnInit(): void {}
@@ -50,7 +45,6 @@ export class LoginComponent implements OnInit {
       };
       this.httpPost.getUserLoggedIn(data).subscribe((resp) => {
         console.log('new Form HII  :   ', resp);
-        this.snackbar.open('Login Successful', 'end now', { duration: 4000 });
         this.router.navigate(['home']);
       }),
         (error) => {

@@ -28,25 +28,22 @@ h1.example-app-name {
 }
 
 .userIcon {
-  margin-left: 15%;
+  margin-left: 16%;
 }
 
 .search {
   display: flex;
   margin-left: 10%;
-  width: 35%;
-  height: 55%;
+  width: 47%;
+  height: 75%;
   border-radius: 10px;
   background-color: #f1f3f4;
   outline: none;
 }
 
 .example-sidenav-content {
-  display: flex;
   height: 100%;
   width: 100%;
-  align-items: center;
-  justify-content: center;
 }
 
 .note-div {
@@ -58,6 +55,8 @@ h1.example-app-name {
   margin: 10px 0px 10px 0px;
   opacity: 0.8;
   border-radius: 0px 20px 20px 0px;
+  outline: none;
+  border: none;
 }
 
 .Notes:hover {

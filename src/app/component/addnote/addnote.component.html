@@ -1,8 +1,66 @@
-<div class="add-main" fxLayout="row" fxLayoutAlign="center center">
-  <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="header-image"></div>
-      <input class="add-note-input" matInput placeholder="Take a note...." />
-    </mat-card-header>
-  </mat-card>
+<div fxLayoutAlign="center center" class="main-note-div">
+  <div fxLayout="column" class="sub-note-div">
+    <div fxLayoutAlign="center center" class="display-notes">
+      <div
+        (click)="fieldClick()"
+        *ngIf="isTrue"
+        fxLayout="column"
+        class="take-note"
+      >
+        <div class="title-div">
+          <mat-card fxLayoutAlign="start center">
+            <input
+              class="add-note-input"
+              matInput
+              placeholder="Take a note...."
+            />
+          </mat-card>
+        </div>
+      </div>
+      <div *ngIf="!isTrue" fxLayout="column" class="take-note">
+        <div class="title-div">
+          <mat-card fxLayoutAlign="start center">
+            <input #txt class="add-note-input" matInput placeholder="Title" />
+          </mat-card>
+        </div>
+        <div class="title-div">
+          <mat-card fxLayoutAlign="start center">
+            <input
+              #desc
+              class="add-note-input"
+              matInput
+              placeholder="Take a note...."
+            />
+          </mat-card>
+        </div>
+        <div class="title-div">
+          <mat-card fxLayoutAlign="start center">
+            <div fxLayout="row" style="width: 100%">
+              <div fxLayout="row">
+                <div>
+                  <img
+                    width="70%"
+                    height="70%"
+                    src="../../../assets/outline_color_lens_black_18dp.png"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    width="70%"
+                    height="70%"
+                    src="../../../assets/outline_archive_black_18dp.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div fxLayoutAlign="end end" class="button" *ngIf="!isTrue">
+                <button class="close-btn" (click)="fieldClick()">close</button>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
