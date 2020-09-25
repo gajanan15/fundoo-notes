@@ -21,6 +21,7 @@ import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { AddnoteComponent } from './component/addnote/addnote.component';
 import { TextFieldModule } from '@angular/cdk/text-field';
+import { ColorpaletteComponent } from './component/colorpalette/colorpalette.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     HomeComponent,
     DashboardComponent,
     AddnoteComponent,
+    ColorpaletteComponent,
   ],
   imports: [
     BrowserModule,
