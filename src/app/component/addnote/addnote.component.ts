@@ -18,4 +18,24 @@ export class AddnoteComponent implements OnInit {
   fieldClick() {
     this.isTrue = !this.isTrue;
   }
+
+  buttonClick(title, description) {
+    if (title.value === '' && description.value === '') {
+      this.fieldClick();
+    } else {
+      this.fieldClick();
+      var noteData = {
+        title: title.value,
+        description: description.value,
+      };
+      this.httpPostAddNote.addNote(noteData).subscribe(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log('Note Error: ', error);
+        }
+      );
+    }
+  }
 }

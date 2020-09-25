@@ -45,8 +45,7 @@ export class LoginComponent implements OnInit {
       };
       this.httpPost.getUserLoggedIn(data).subscribe((resp) => {
         console.log('new Form HII  :   ', resp);
-        this.toeknID = resp;
-        localStorage.setItem('token', JSON.stringify(this.toeknID.id));
+        localStorage.setItem('token', resp['id']);
         this.router.navigate(['home']);
       }),
         (error) => {

@@ -45,7 +45,9 @@
                 </div>
               </div>
               <div fxLayoutAlign="end end" class="button" *ngIf="!isTrue">
-                <button class="close-btn" (click)="fieldClick()">close</button>
+                <button class="close-btn" (click)="buttonClick(txt, desc)">
+                  close
+                </button>
               </div>
             </div>
           </mat-card>
