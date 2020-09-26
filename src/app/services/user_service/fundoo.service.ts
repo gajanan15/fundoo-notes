@@ -33,4 +33,8 @@ export class FundooService {
       this.httpOptions
     );
   }
+
+  getAllNotes() {
+    return this.http.getService(this.baseUrl + `notes/getNotesList`, true, this.httpOptions);
+  }
 }

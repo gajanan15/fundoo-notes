@@ -1,3 +1,4 @@
+import { FundooService } from './../../services/user_service/fundoo.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplaynotesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpGetAllNote: FundooService) { }
+
+  list: any = [];
+  noteList: any = [];
 
   ngOnInit(): void {
+    this.getAllNote()
+  }
+
+  getAllNote() {
+    this.httpGetAllNote.getAllNotes().subscribe((response) => {
+      console.log("All Notes: ", response)
+      this.list = response;
+      this.noteList = this.list.data.data;
+      console.log("My List: ", this.noteList)
+    }, error => {
+      console.log("Get Note Error: ", error)
+    })
   }
 
 }
