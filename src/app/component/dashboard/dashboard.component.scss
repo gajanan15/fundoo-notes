@@ -81,3 +81,26 @@ h1.example-app-name {
   height: 100%;
 }
 
+.logout-main{
+  position: absolute;
+  transform: translate(400%,40%);
+  z-index: 999;
+}
+
+.logout-card-main{
+  width: 100%;
+  height: 100%;
+}
+
+.logout-img-user{
+  width: 230px;
+}
+
+.user-details{
+  margin-top: 2%;
+}
+
+.logout-btn{
+  padding-left: 3%;
+  padding-right: 3%
+}

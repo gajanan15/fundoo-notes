@@ -22,7 +22,7 @@
           <input id="serach-input" type="text" placeholder="Search...." />
         </div>
       </div>
-      <div class="userIcon" fxLayoutAlign="space-between end">
+      <div (click)="imageClick()" class="userIcon" fxLayoutAlign="space-between end">
         <img src="../../../assets/images/userIcon.png" />
       </div>
     </mat-toolbar>
@@ -39,4 +39,19 @@
       </div>
     </mat-sidenav-container>
   </div>
+</div>
+<div *ngIf="userLogin" class="logout-main">
+  <mat-card class="logout-card-main">
+    <div fxLayoutAlign="center center" class="logout-img-user">
+      <img src="../../../assets/images/userIcon.png" />
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" class="user-details">
+      <p style="display: contents">gajanandesai97@gmail.com</p>
+      <p style="color: gray">gajanan desai</p>
+    </div>
+    <hr>
+    <div fxLayout="row" fxLayoutAlign="center center" class="logout-btn">
+      <button mat-raised-button (click)="logout()">LogOut</button>
+    </div>
+  </mat-card>
 </div>

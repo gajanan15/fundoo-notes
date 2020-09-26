@@ -5,9 +5,9 @@
     fxFlex.md="40"
     fxFlex.sm="60"
     class="card"
-  >
+    >
     <div class="login-heading" fxLayout="column" fxLayoutAlign="center center">
-      <mat-card-title style="margin-top: 5%">
+      <mat-card-title class="app-titles">
         <p>
           <span class="blue">F</span>
           <span class="red">u</span>
@@ -23,46 +23,20 @@
 
     <form (ngSubmit)="loginProcess()">
       <div fxLayout="column" fxLayoutAlign="center center">
-        <mat-form-field
-          [style.fontSize.px]="15"
-          appearance="outline"
-          style="width: 90%"
-        >
+        <mat-form-field [style.fontSize.px]="15" appearance="outline" class="email-tag">
           <mat-label>Email or phone</mat-label>
-          <input
-            matInput
-            placeholder="Email"
-            name="email"
-            type="text"
-            [formControl]="email"
-            required
-          />
+          <input matInput placeholder="Email" name="email" type="text" [formControl]="email" required />
           <mat-error *ngIf="email.invalid">{{
             getErrorMessageForEmail()
           }}</mat-error>
         </mat-form-field>
 
-        <mat-form-field
-          [style.fontSize.px]="15"
-          appearance="outline"
-          style="width: 90%"
-        >
+        <mat-form-field [style.fontSize.px]="15" appearance="outline" class="pssword-tag">
           <mat-label>Enter your password</mat-label>
-          <input
-            matInput
-            placeholder="Password"
-            name="password"
-            [type]="hide ? 'password' : 'text'"
-            [formControl]="password"
-            required
-          />
-          <button
-            mat-icon-button
-            matSuffix
-            (click)="hide = !hide"
-            [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide"
-          >
+          <input matInput placeholder="Password" name="password" [type]="hide ? 'password' : 'text'"
+            [formControl]="password" required />
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
           <mat-error *ngIf="password.invalid">{{
@@ -70,31 +44,20 @@
           }}</mat-error>
         </mat-form-field>
       </div>
-      <div
-        class="login-button"
-        fxLayout="row"
-        fxLayoutAlign="center center"
-        fxLayoutGap="10%"
-      ></div>
-      <div
-        fxLayout="row"
-        fxLayoutAlign="space-between end"
-        style="padding-left: 5%; padding-right: 5%"
+      <div class="login-button" fxLayout="row" 
+      fxLayoutAlign="center center" fxLayoutGap="10%"
       >
+    </div>
+      <div fxLayout="row" fxLayout.xs="column-reverse" fxLayoutGap.xs="10px" 
+      fxLayoutAlign.xs="center center" 
+      fxLayoutAlign="space-between end" class="create-Account-tag">
         <div>
-          <a
-            href="http://fundoonotes.incubation.bridgelabz.com"
-            style="font-size: 18px; text-decoration: none"
-            target="_blank"
-            >Create Account</a
-          >
+          <a href="http://fundoonotes.incubation.bridgelabz.com" 
+          style="font-size: 18px; text-decoration: none"
+            target="_blank">Create Account</a>
         </div>
         <div fxLayoutAlign="end end">
-          <button
-            style="width: 25%; background-color: #1a73e8"
-            mat-flat-button
-            color="primary"
-          >
+          <button class="login-btn"  mat-flat-button color="primary">
             Log In
           </button>
         </div>
