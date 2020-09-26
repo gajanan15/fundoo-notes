@@ -26,12 +26,29 @@
         <img src="../../../assets/images/userIcon.png" />
       </div>
     </mat-toolbar>
-    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-        fixedTopGap="56" style="width: 20%">
+    <mat-sidenav-container class="example-sidenav-container" 
+      [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+    >
+      <mat-sidenav #snav 
+        [mode]="mobileQuery.matches ? 'over' : 'side'" 
+        [fixedInViewport]="mobileQuery.matches"
+        fixedTopGap="56" style="width: 20%"
+      >
         <mat-nav-list>
-          <a class="Notes" mat-list-item routerLink="." *ngFor="let nav of fillerNav; let i = index"
-            [selected]="i == 0">{{ nav }}</a>
+            <a class="Notes" mat-list-item routerLink=".">
+              <mat-icon>
+                <img src="../../../assets/images/bulb.svg">
+            </mat-icon>
+              <mat-list-item>Notes</mat-list-item>
+            </a>
+            <a class="Notes" mat-list-item routerLink=".">
+              <app-archive></app-archive>
+              <mat-list-item>Archive</mat-list-item>
+            </a>
+            <a class="Notes" mat-list-item routerLink=".">
+              <mat-icon>delete_outline</mat-icon>
+              <mat-list-item>Trash</mat-list-item>
+            </a>
         </mat-nav-list>
       </mat-sidenav>
       <div class="example-sidenav-content">
