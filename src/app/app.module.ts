@@ -25,6 +25,7 @@ import { ColorpaletteComponent } from './component/colorpalette/colorpalette.com
 import { ArchiveComponent } from './component/archive/archive.component';
 import { DisplaynotesComponent } from './component/displaynotes/displaynotes.component';
 import { NoteComponent } from './component/note/note.component';
+import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { NoteComponent } from './component/note/note.component';
     ArchiveComponent,
     DisplaynotesComponent,
     NoteComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
