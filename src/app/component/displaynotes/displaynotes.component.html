@@ -1,1 +1,20 @@
-<p>displaynotes works!</p>
+<div fxLayout="row wrap" fxLayoutAlign="start none">
+    <div *ngFor="let note of noteList" class="sub-main">
+        <div class="note-card-dive">
+            <mat-card>
+                <mat-card-content>
+                    <p><b>{{note.title}}</b></p>
+                    <p>{{note.description}}</p>
+                    <div fxLayout="row">
+                        <div>
+                            <app-colorpalette></app-colorpalette>
+                        </div>
+                        <div>
+                            <app-archive></app-archive>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
