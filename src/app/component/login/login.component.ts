@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   hide = true;
-  constructor(private httpPost: FundooService, private router: Router) {}
+  constructor(private httpPost: FundooService, private router: Router) { }
   toeknID;
   cartID: string = '';
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [
@@ -25,15 +25,15 @@ export class LoginComponent implements OnInit {
     return this.email.hasError('required')
       ? 'Email field cannot be blank'
       : this.email.hasError('email')
-      ? 'Not a valid email'
-      : '';
+        ? 'Not a valid email'
+        : '';
   }
   getErrorMessageForPassword() {
     return this.password.hasError('required')
       ? 'Password cannot be blank'
       : this.password.hasError('password')
-      ? 'Not a valid password'
-      : '';
+        ? 'Not a valid password'
+        : '';
   }
 
   loginProcess() {

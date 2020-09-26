@@ -61,4 +61,4 @@ import { ArchiveComponent } from './component/archive/archive.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,14 +8,32 @@ import { MediaMatcher } from '@angular/cdk/layout';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(media: MediaMatcher) {
+  constructor(media: MediaMatcher, private router: Router) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
   }
 
-  ngOnInit(): void {}
+  userLogin: boolean = false;
+
+  ngOnInit(): void {
+    if (localStorage.getItem('token') === null || localStorage.getItem('token') === undefined) {
+      this.router.navigate(['login']);
+    }
+    else {
+      this.router.navigate(['home']);
+    }
+  }
 
   mobileQuery: MediaQueryList;
 
-  //fillerNav = Array.from({ length: 3 }, (_, i) => "Nav Item","xyz");
-  fillerNav:string[] = ['Notes',"Reminders","Edit Labels","Archive","Trash"];
+  fillerNav: string[] = [
+    'Notes',
+    'Reminders',
+    'Edit Labels',
+    'Archive',
+    'Trash',
+  ];
+
+  imageClick() {
+    this.userLogin = !this.userLogin;
+  }
 }

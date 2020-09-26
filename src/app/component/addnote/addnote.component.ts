@@ -1,5 +1,5 @@
 import { FundooService } from './../../services/user_service/fundoo.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-addnote',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addnote.component.scss'],
 })
 export class AddnoteComponent implements OnInit {
-  constructor(private httpPostAddNote: FundooService) {}
+  constructor(private httpPostAddNote: FundooService) { }
 
-  ngOnInit(): void {}
+  @Input() userLogin: boolean;
+
+  ngOnInit(): void { }
 
   title: any;
   description: any;
