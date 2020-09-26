@@ -1,45 +1,40 @@
-<div fxLayoutAlign="center none" class="main-note-div">
-  <div fxLayout="column" class="sub-note-div">
-    <div fxLayoutAlign="center center" class="display-notes">
-      <div (click)="fieldClick()" *ngIf="isTrue" fxLayout="column" class="take-note">
-        <div class="title-div">
-          <mat-card fxLayoutAlign="start center">
-            <input class="add-note-input" matInput placeholder="Take a note...." />
-          </mat-card>
-        </div>
-      </div>
-      <div *ngIf="!isTrue" fxLayout="column" class="take-note">
-        <div class="title-div">
-          <mat-card fxLayoutAlign="start center">
-            <input #txt class="add-note-input" matInput placeholder="Title" />
-          </mat-card>
-        </div>
-        <div class="title-div">
-          <mat-card fxLayoutAlign="start center">
-            <input #desc class="add-note-input" matInput placeholder="Take a note...." />
-          </mat-card>
-        </div>
-        <div class="title-div">
-          <mat-card fxLayoutAlign="start center">
-            <div fxLayout="row" style="width: 100%">
-              <div fxLayout="row">
-                <div>
-                  <app-colorpalette></app-colorpalette>
-                </div>
-                <div>
-                  <app-archive></app-archive>
-                </div>
-              </div>
-              <div fxLayoutAlign="end end" class="button" *ngIf="!isTrue">
-                <button class="close-btn" (click)="buttonClick(txt, desc)">
-                  close
-                </button>
-              </div>
-            </div>
-          </mat-card>
-        </div>
-      </div>
+<div fxLayoutAlign="center center" class="display-notes">
+  <div (click)="fieldClick()" *ngIf="isTrue" fxLayout="column" class="take-note">
+    <div class="title-div">
+      <mat-card fxLayoutAlign="start center">
+        <input class="add-note-input" matInput placeholder="Take a note...." />
+      </mat-card>
     </div>
-    <app-displaynotes></app-displaynotes>
+  </div>
+  <div *ngIf="!isTrue" fxLayout="column" class="take-note">
+    <div class="title-div">
+      <mat-card fxLayoutAlign="start center">
+        <input #txt class="add-note-input" matInput placeholder="Title" />
+      </mat-card>
+    </div>
+    <div class="title-div">
+      <mat-card fxLayoutAlign="start center">
+        <input #desc class="add-note-input" matInput placeholder="Take a note...." />
+      </mat-card>
+    </div>
+    <div class="title-div">
+      <mat-card fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%">
+          <div fxLayout="row">
+            <div>
+              <app-colorpalette></app-colorpalette>
+            </div>
+            <div>
+              <app-archive></app-archive>
+            </div>
+          </div>
+          <div fxLayoutAlign="end end" class="button" *ngIf="!isTrue">
+            <button class="close-btn" (click)="buttonClick(txt, desc)">
+              close
+            </button>
+          </div>
+        </div>
+      </mat-card>
+    </div>
   </div>
 </div>

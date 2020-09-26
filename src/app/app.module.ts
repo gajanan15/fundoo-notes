@@ -24,6 +24,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
 import { ColorpaletteComponent } from './component/colorpalette/colorpalette.component';
 import { ArchiveComponent } from './component/archive/archive.component';
 import { DisplaynotesComponent } from './component/displaynotes/displaynotes.component';
+import { NoteComponent } from './component/note/note.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { DisplaynotesComponent } from './component/displaynotes/displaynotes.com
     ColorpaletteComponent,
     ArchiveComponent,
     DisplaynotesComponent,
+    NoteComponent,
   ],
   imports: [
     BrowserModule,
