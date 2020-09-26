@@ -23,6 +23,7 @@ import { AddnoteComponent } from './component/addnote/addnote.component';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { ColorpaletteComponent } from './component/colorpalette/colorpalette.component';
 import { ArchiveComponent } from './component/archive/archive.component';
+import { DisplaynotesComponent } from './component/displaynotes/displaynotes.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ArchiveComponent } from './component/archive/archive.component';
     AddnoteComponent,
     ColorpaletteComponent,
     ArchiveComponent,
+    DisplaynotesComponent,
   ],
   imports: [
     BrowserModule,

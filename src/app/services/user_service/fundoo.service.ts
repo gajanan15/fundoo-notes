@@ -8,7 +8,7 @@ import { HttpService } from './../http_service/http.service';
 })
 export class FundooService {
   baseUrl = environment.apiUrl;
-  constructor(private http: HttpService) {}
+  constructor(private http: HttpService) { }
 
   httpOptions = {
     headers: new HttpHeaders({

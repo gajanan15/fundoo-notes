@@ -1,19 +1,10 @@
-<div fxLayoutAlign="center center" class="main-note-div">
+<div fxLayoutAlign="center none" class="main-note-div">
   <div fxLayout="column" class="sub-note-div">
     <div fxLayoutAlign="center center" class="display-notes">
-      <div
-        (click)="fieldClick()"
-        *ngIf="isTrue"
-        fxLayout="column"
-        class="take-note"
-      >
+      <div (click)="fieldClick()" *ngIf="isTrue" fxLayout="column" class="take-note">
         <div class="title-div">
           <mat-card fxLayoutAlign="start center">
-            <input
-              class="add-note-input"
-              matInput
-              placeholder="Take a note...."
-            />
+            <input class="add-note-input" matInput placeholder="Take a note...." />
           </mat-card>
         </div>
       </div>
@@ -25,12 +16,7 @@
         </div>
         <div class="title-div">
           <mat-card fxLayoutAlign="start center">
-            <input
-              #desc
-              class="add-note-input"
-              matInput
-              placeholder="Take a note...."
-            />
+            <input #desc class="add-note-input" matInput placeholder="Take a note...." />
           </mat-card>
         </div>
         <div class="title-div">
@@ -54,5 +40,6 @@
         </div>
       </div>
     </div>
+    <app-displaynotes></app-displaynotes>
   </div>
 </div>

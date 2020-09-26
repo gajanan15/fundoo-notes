@@ -12,8 +12,6 @@ export class DashboardComponent implements OnInit {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
   }
 
-  userLogin: boolean = false;
-
   ngOnInit(): void {
     if (localStorage.getItem('token') === null || localStorage.getItem('token') === undefined) {
       this.router.navigate(['login']);
@@ -32,8 +30,4 @@ export class DashboardComponent implements OnInit {
     'Archive',
     'Trash',
   ];
-
-  imageClick() {
-    this.userLogin = !this.userLogin;
-  }
 }

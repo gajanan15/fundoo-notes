@@ -1,8 +1,5 @@
 <div>
-  <div
-    class="example-container"
-    [class.example-is-mobile]="mobileQuery.matches"
-  >
+  <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="example-toolbar" style="background-color: white">
       <div>
         <button mat-icon-button (click)="snav.toggle()">
@@ -10,36 +7,27 @@
         </button>
       </div>
       <div fxLayoutAlign="center center">
-        <img
-          style="padding-left: 20px; width: 30px; height: 30px; margin-top: 3%"
-          src="../../../assets/images/keepIcon.jpg"
-          alt="icon"
-        />
+        <img style="padding-left: 20px; width: 30px; height: 30px; margin-top: 3%"
+          src="../../../assets/images/keepIcon.jpg" alt="icon" />
       </div>
       <div>
         <h1 class="example-app-name">fundooNotes</h1>
       </div>
       <div class="search" fxLayout="row">
         <div class="img-icon" fxLayoutAlign="center center">
-          <img
-            width="45%"
-            height="45%"
-            style="color: gray; font-weight: 100"
-            src="../../../assets/images/searchIcon.png"
-          />
+          <img width="45%" height="45%" style="color: gray; font-weight: 100"
+            src="../../../assets/images/searchIcon.png" />
         </div>
         <div id="search-text-div">
           <input id="serach-input" type="text" placeholder="Search...." />
         </div>
       </div>
       <div class="userIcon" fxLayoutAlign="space-between end">
-        <img (click)="imageClick()" src="../../../assets/images/userIcon.png" />
+        <img src="../../../assets/images/userIcon.png" />
       </div>
     </mat-toolbar>
-    <mat-sidenav-container class="example-sidenav-container"
-     [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-       [fixedInViewport]="mobileQuery.matches"
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
         fixedTopGap="56" style="width: 20%">
         <mat-nav-list>
           <a class="Notes" mat-list-item routerLink="." *ngFor="let nav of fillerNav; let i = index"
@@ -47,7 +35,7 @@
         </mat-nav-list>
       </mat-sidenav>
       <div class="example-sidenav-content">
-        <app-addnote [userLogin]="userLogin"></app-addnote>
+        <app-addnote></app-addnote>
       </div>
     </mat-sidenav-container>
   </div>

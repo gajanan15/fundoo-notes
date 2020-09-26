@@ -1,5 +1,5 @@
 import { FundooService } from './../../services/user_service/fundoo.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-addnote',
@@ -8,8 +8,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AddnoteComponent implements OnInit {
   constructor(private httpPostAddNote: FundooService) { }
-
-  @Input() userLogin: boolean;
 
   ngOnInit(): void { }
 
