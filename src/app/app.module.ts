@@ -27,6 +27,8 @@ import { DisplaynotesComponent } from './component/displaynotes/displaynotes.com
 import { NoteComponent } from './component/note/note.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { TrashComponent } from './component/trash/trash.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 @NgModule({
   declarations: [
@@ -65,6 +67,7 @@ import { TrashComponent } from './component/trash/trash.component';
     MatListModule,
     HttpClientModule,
     TextFieldModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -5,6 +5,22 @@
                     <mat-card-content>
                         <p><b>{{note.title}}</b></p>
                         <p>{{note.description}}</p>
+                        <div fxLayout="row" class="images">
+                            <div>
+                                <img
+                                matTooltip="Delete Forever"
+                                width="120%" height="90%" style="cursor: pointer"
+                                src="../../../assets/images/delete_forever.png"
+                            />
+                            </div>&nbsp;&nbsp;
+                            <div>
+                                <img
+                                    matTooltip="Restore"
+                                    width="120%" height="90%" style="cursor: pointer"
+                                    src="../../../assets/images/delete-restore.svg"
+                                />
+                            </div>
+                        </div>
                     </mat-card-content>
                 </mat-card>
             </div>
