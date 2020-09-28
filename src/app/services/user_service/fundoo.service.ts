@@ -17,20 +17,12 @@ export class FundooService {
   };
 
   getUserLoggedIn(data) {
-    return this.http.postService(
-      data,
-      this.baseUrl + `user/login`,
-      false,
-      this.httpOptions
+    return this.http.postService(data, this.baseUrl + `user/login`, false, this.httpOptions
     );
   }
 
   addNote(data) {
-    return this.http.postService(
-      data,
-      this.baseUrl + `notes/addNotes`,
-      true,
-      this.httpOptions
+    return this.http.postService(data, this.baseUrl + `notes/addNotes`, true, this.httpOptions
     );
   }
 
@@ -48,5 +40,9 @@ export class FundooService {
 
   addToTrash(data){
     return this.http.postService(data,this.baseUrl+`notes/trashNotes`,true,this.httpOptions)
+  }
+
+  getAllTrashNotes(){
+    return this.http.getService(this.baseUrl + `notes/getTrashNotesList`, true,this.httpOptions);
   }
 }
