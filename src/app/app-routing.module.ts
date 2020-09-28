@@ -1,3 +1,4 @@
+import { TrashComponent } from './component/trash/trash.component';
 import { NoteComponent } from './component/note/note.component';
 import { ArchiveComponent } from './component/archive/archive.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
@@ -32,7 +33,11 @@ const routes: Routes = [
      {
        path:"note",
        component:NoteComponent
-     }
+     },
+     {
+      path:"trash",
+      component:TrashComponent
+    }
     ]
   },
   {

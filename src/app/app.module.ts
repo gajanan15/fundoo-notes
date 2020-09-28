@@ -26,6 +26,7 @@ import { ArchiveComponent } from './component/archive/archive.component';
 import { DisplaynotesComponent } from './component/displaynotes/displaynotes.component';
 import { NoteComponent } from './component/note/note.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import { TrashComponent } from './component/trash/trash.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
     DisplaynotesComponent,
     NoteComponent,
     PageNotFoundComponent,
+    TrashComponent,
   ],
   imports: [
     BrowserModule,
