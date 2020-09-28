@@ -12,11 +12,12 @@ export class DisplaynotesComponent implements OnInit {
 
   list: any = [];
   noteList: any = [];
+  noteId:any=[];
 
   ngOnInit(): void {
     this.getAllNote()
   }
-
+  
   getAllNote() {
     this.httpGetAllNote.getAllNotes().subscribe((response) => {
       console.log("All Notes: ", response)
@@ -26,6 +27,20 @@ export class DisplaynotesComponent implements OnInit {
     }, error => {
       console.log("Get Note Error: ", error)
     })
+  }
+
+  addToArchive(noteid){
+    this.noteId = [noteid.id];
+    var data={
+      isArchived:true,
+      noteIdList:this.noteId
+    };
+    this.httpGetAllNote.addArchiveNote(data).subscribe((response)=>{
+      console.log("Archive Notes: ",response);
+    },error=>{
+      console.log("Archive Error: ",error);
+    })
+    this.getAllNote();
   }
 
 }

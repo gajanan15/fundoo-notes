@@ -1,7 +1,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="start none">
     <div *ngFor="let note of noteList" class="sub-main">
         <div class="note-card-dive">
-            <mat-card class="card-data">
+            <mat-card class="card-data" >
                 <mat-card-content>
                     <p><b>{{note.title}}</b></p>
                     <p>{{note.description}}</p>
@@ -11,7 +11,7 @@
                         </div>
                         <div>
                             <img
-                                width="70%" height="70%" style="cursor: pointer"
+                                width="70%" height="70%" style="cursor: pointer" (click)="addToArchive(note)"
                                 src="../../../assets/images/outline_archive_black_18dp.png"
                             />
                         </div>

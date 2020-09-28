@@ -37,4 +37,8 @@ export class FundooService {
   getAllNotes() {
     return this.http.getService(this.baseUrl + `notes/getNotesList`, true, this.httpOptions);
   }
+
+  addArchiveNote(data){
+    return this.http.postService(data,this.baseUrl+`notes/archiveNotes`, true, this.httpOptions);
+  }
 }
