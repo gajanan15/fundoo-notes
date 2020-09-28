@@ -10,13 +10,14 @@
                             <app-colorpalette></app-colorpalette>
                         </div>
                         <div>
-                            <img
+                            <img matTooltip="Archive"
                                 width="70%" height="70%" style="cursor: pointer" (click)="addToArchive(note)"
                                 src="../../../assets/images/outline_archive_black_18dp.png"
                             />
                         </div>
                         <div>
-                            <mat-icon style="cursor: pointer;" (click)="addToTrash(note)">delete_outline</mat-icon>
+                            <mat-icon style="cursor: pointer;" (click)="addToTrash(note)" matTooltip="Delete Note">
+                                delete_outline</mat-icon>
                         </div>
                     </div>
                 </mat-card-content>
