@@ -13,6 +13,9 @@ export class DashboardComponent implements OnInit {
   }
 
   userLogin: boolean = false;
+  email:string;
+  firstName:string;
+  lastName:string;
 
   ngOnInit(): void {
     if (localStorage.getItem('token') === null || localStorage.getItem('token') === undefined) {
@@ -20,6 +23,9 @@ export class DashboardComponent implements OnInit {
     }
     else {
       this.router.navigate(['home']);
+      this.email=localStorage.getItem('userEmail');
+      this.firstName=localStorage.getItem('firstName');
+      this.lastName=localStorage.getItem('lastName');
     }
   }
 

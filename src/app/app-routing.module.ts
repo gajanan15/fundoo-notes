@@ -1,3 +1,5 @@
+import { NoteComponent } from './component/note/note.component';
+import { ArchiveComponent } from './component/archive/archive.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { LoginComponent } from './component/login/login.component';
@@ -22,6 +24,16 @@ const routes: Routes = [
   {
     path: 'home',
     component: DashboardComponent,
+    children: [
+      {
+        path: "archive",
+        component: ArchiveComponent
+      },
+     {
+       path:"note",
+       component:NoteComponent
+     }
+    ]
   },
   {
     path: '**',

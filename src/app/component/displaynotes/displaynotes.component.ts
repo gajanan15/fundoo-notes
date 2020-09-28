@@ -22,7 +22,7 @@ export class DisplaynotesComponent implements OnInit {
       console.log("All Notes: ", response)
       this.list = response;
       this.noteList = this.list.data.data;
-      console.log("My List: ", this.noteList)
+      this.noteList.reverse();
     }, error => {
       console.log("Get Note Error: ", error)
     })
