@@ -40,7 +40,5 @@ export class DisplaynotesComponent implements OnInit {
     },error=>{
       console.log("Archive Error: ",error);
     })
-    this.getAllNote();
   }
-
 }

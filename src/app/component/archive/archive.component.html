@@ -1,3 +1,23 @@
-<div fxLayout="row" fxLayoutAlign="center center">
-  <h2>Archive Notes Here</h2>
+<div fxLayout="row wrap" fxLayoutAlign="start none">
+  <div *ngFor="let note of archiveNoteList" class="sub-main">
+      <div class="note-card-dive">
+          <mat-card class="card-data" >
+              <mat-card-content>
+                  <p><b>{{note.title}}</b></p>
+                  <p>{{note.description}}</p>
+                  <div fxLayout="row">
+                      <div>
+                          <app-colorpalette></app-colorpalette>
+                      </div>
+                      <div>
+                          <img
+                              width="70%" height="70%" style="cursor: pointer"
+                              src="../../../assets/images/outline_archive_black_18dp.png"
+                          />
+                      </div>
+                  </div>
+              </mat-card-content>
+          </mat-card>
+      </div>
+  </div>
 </div>
