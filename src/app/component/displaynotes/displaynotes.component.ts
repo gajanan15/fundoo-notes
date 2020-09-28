@@ -41,4 +41,17 @@ export class DisplaynotesComponent implements OnInit {
       console.log("Archive Error: ",error);
     })
   }
+
+  addToTrash(noteid){
+    this.noteId = [noteid.id];
+    var data={
+      isDeleted:true,
+      noteIdList:this.noteId
+    };
+    this.httpGetAllNote.addToTrash(data).subscribe((response)=>{
+      console.log("Trash API: ",response)
+    },error=>{
+      console.log("Trash Error: ",error)
+    })
+  }
 }
