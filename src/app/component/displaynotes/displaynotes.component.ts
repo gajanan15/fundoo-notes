@@ -13,6 +13,8 @@ export class DisplaynotesComponent implements OnInit {
   list: any = [];
   noteList: any = [];
   noteId:any=[];
+  archive:boolean;
+  notes:any;
 
   ngOnInit(): void {
     this.getAllNote()
@@ -23,7 +25,9 @@ export class DisplaynotesComponent implements OnInit {
       console.log("All Notes: ", response)
       this.list = response;
       this.noteList = this.list.data.data;
-      this.noteList.reverse();
+      this.notes = this.noteList.filter(function(e){
+        return e.isArchived === false && e.isDeleted === false
+      }).reverse();
     }, error => {
       console.log("Get Note Error: ", error)
     })
@@ -31,6 +35,7 @@ export class DisplaynotesComponent implements OnInit {
 
   addToArchive(noteid){
     this.noteId = [noteid.id];
+    this.archive = noteid.isArchived;
     var data={
       isArchived:true,
       noteIdList:this.noteId

@@ -1,5 +1,5 @@
 import { FundooService } from './../../services/user_service/fundoo.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-archive',
@@ -16,15 +16,16 @@ export class ArchiveComponent implements OnInit {
   ngOnInit(): void {
     this.getAllArchiveNote();
   }
+  
 
   getAllArchiveNote(){
     this.httpGetAllArchiveNotes.getAllArchiveNotes().subscribe((response)=>{
       console.log("get all Archive: ",response);
       this.archiveList = response;
       this.archiveNoteList = this.archiveList.data.data;
+      this.archiveNoteList.reverse();
     },error=>{
       console.log("getArchiveError: ",error)
     })
   }
-
 }
