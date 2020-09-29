@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/auth/auth.guard';
 import { TrashComponent } from './component/trash/trash.component';
 import { NoteComponent } from './component/note/note.component';
 import { ArchiveComponent } from './component/archive/archive.component';
@@ -10,22 +11,19 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
-  {
     path: 'login',
     component: LoginComponent,
   },
   {
-    path: '',
-    component: HomeComponent,
-  },
-  {
     path: 'home',
     component: DashboardComponent,
+    canActivate:[AuthGuard],
     children: [
+      {
+        path: '',
+        redirectTo: 'note',
+        pathMatch: 'full',
+      },
       {
         path: "archive",
         component: ArchiveComponent

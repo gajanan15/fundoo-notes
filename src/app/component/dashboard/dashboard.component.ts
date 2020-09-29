@@ -18,15 +18,9 @@ export class DashboardComponent implements OnInit {
   lastName:string;
 
   ngOnInit(): void {
-    if (localStorage.getItem('token') === null || localStorage.getItem('token') === undefined) {
-      this.router.navigate(['login']);
-    }
-    else {
-      this.router.navigate(['home']);
       this.email=localStorage.getItem('userEmail');
       this.firstName=localStorage.getItem('firstName');
       this.lastName=localStorage.getItem('lastName');
-    }
   }
 
   mobileQuery: MediaQueryList;
