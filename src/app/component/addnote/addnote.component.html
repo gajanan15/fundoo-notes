@@ -25,13 +25,10 @@
               <app-colorpalette></app-colorpalette>
             </div>
             <div>
-              <img matTooltip="Archive"
-                width="70%" height="70%" style="cursor: pointer"
-                src="../../../assets/images/outline_archive_black_18dp.png"
-              />
+              <app-archive-icon></app-archive-icon>
             </div>
             <div>
-              <mat-icon style="cursor: pointer;" matTooltip="Delete Note">delete_outline</mat-icon>
+              <app-delete-icon></app-delete-icon>
             </div>
           </div>
           <div fxLayoutAlign="end end" class="button" *ngIf="!isTrue">

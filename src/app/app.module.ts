@@ -28,6 +28,8 @@ import { NoteComponent } from './component/note/note.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { TrashComponent } from './component/trash/trash.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { ArchiveIconComponent } from './component/icons/archive-icon/archive-icon.component';
+import { DeleteIconComponent } from './component/icons/delete-icon/delete-icon.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     NoteComponent,
     PageNotFoundComponent,
     TrashComponent,
+    ArchiveIconComponent,
+    DeleteIconComponent,
   ],
   imports: [
     BrowserModule,
