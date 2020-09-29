@@ -27,6 +27,10 @@ h1.example-app-name {
   background-color: white;
 }
 
+.side-div{
+  width: 20%;
+}
+
 .userIcon {
   margin-left: 20%;
 }
@@ -103,4 +107,16 @@ h1.example-app-name {
 .logout-btn{
   padding-left: 3%;
   padding-right: 3%
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+  .side-div{
+    width: 40%;
+  }
+}
+
+@media only screen and (min-device-width: 411px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 1) {
+  .side-div{
+    width: 40%;
+  }
 }

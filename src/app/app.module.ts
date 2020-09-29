@@ -30,7 +30,8 @@ import { TrashComponent } from './component/trash/trash.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ArchiveIconComponent } from './component/icons/archive-icon/archive-icon.component';
 import { DeleteIconComponent } from './component/icons/delete-icon/delete-icon.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { NoteDialogboxComponent } from './component/note-dialogbox/note-dialogbox.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { DeleteIconComponent } from './component/icons/delete-icon/delete-icon.c
     TrashComponent,
     ArchiveIconComponent,
     DeleteIconComponent,
+    NoteDialogboxComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ import { DeleteIconComponent } from './component/icons/delete-icon/delete-icon.c
     MatListModule,
     HttpClientModule,
     TextFieldModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

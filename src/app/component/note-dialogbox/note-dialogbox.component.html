@@ -1,0 +1,31 @@
+<div style="max-height: 427.075px;">
+    <h1 mat-dialog-title>
+        <input class="add-note-input" matInput value="{{noteTitle}}"
+        [(ngModel)]="noteTitle" placeholder="Title" />
+    </h1>
+    <div mat-dialog-content>
+        <input #desc class="add-note-input" matInput value="{{noteDescription}}"
+        [(ngModel)]="noteDescription" placeholder="Take a note...." />
+    </div>
+</div>
+
+<div mat-dialog-actions style="width: 100%;">
+    <div fxLayout="row">
+        <div>
+            <app-colorpalette></app-colorpalette>
+        </div>
+        <div>
+            <app-archive-icon></app-archive-icon>
+        </div>
+        <div>
+            <app-delete-icon></app-delete-icon>
+        </div>
+    </div>
+    <div  fxLayout="row" fxLayoutAlign="end center"
+          class="update-close-btn">
+        <button  
+        mat-button mat-dialog-close 
+        (click)="updateNote()">Close</button>
+    </div>
+ 
+</div>

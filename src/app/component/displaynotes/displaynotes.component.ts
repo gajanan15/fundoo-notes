@@ -1,5 +1,7 @@
+import { NoteDialogboxComponent } from './../note-dialogbox/note-dialogbox.component';
 import { FundooService } from './../../services/user_service/fundoo.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-displaynotes',
@@ -8,24 +10,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplaynotesComponent implements OnInit {
 
-  constructor(private httpGetAllNote: FundooService) { }
+  constructor(private httpGetAllNote: FundooService,public dialog: MatDialog) { }
 
   list: any = [];
   noteList: any = [];
   noteId:any=[];
   archive:boolean;
   notes:any;
+  title:any;
+  description:any;
 
   ngOnInit(): void {
     this.getAllNote()
   }
   
+   openDialog(noteid) {
+      const dialogRef = this.dialog.open(NoteDialogboxComponent, {
+        width: '450px',
+        data: {noteId:noteid.id,title: noteid.title, description: noteid.description}
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        this.getAllNote();
+        this.title = result;
+      });
+   }
+  
   getAllNote() {
     this.httpGetAllNote.getAllNotes().subscribe((response) => {
-      console.log("All Notes: ", response)
       this.list = response;
       this.noteList = this.list.data.data;
-      this.notes = this.noteList.filter(function(e){
+      this.notes = this.noteList.filter((e)=>{
         return e.isArchived === false && e.isDeleted === false
       }).reverse();
     }, error => {
@@ -42,6 +57,7 @@ export class DisplaynotesComponent implements OnInit {
     };
     this.httpGetAllNote.addArchiveNote(data).subscribe((response)=>{
       console.log("Archive Notes: ",response);
+      this.getAllNote();
     },error=>{
       console.log("Archive Error: ",error);
     })
@@ -54,7 +70,8 @@ export class DisplaynotesComponent implements OnInit {
       noteIdList:this.noteId
     };
     this.httpGetAllNote.addToTrash(data).subscribe((response)=>{
-      console.log("Trash API: ",response)
+      console.log("Trash API: ",response);
+      this.getAllNote();
     },error=>{
       console.log("Trash Error: ",error)
     })
