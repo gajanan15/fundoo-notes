@@ -1,14 +1,7 @@
 import { NoteDialogboxComponent } from './../note-dialogbox/note-dialogbox.component';
 import { FundooService } from './../../services/user_service/fundoo.service';
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  ViewChild,
-} from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-displaynotes',
@@ -37,13 +30,12 @@ export class DisplaynotesComponent implements OnInit {
     const dialogRef = this.dialog.open(NoteDialogboxComponent, {
       width: '450px',
       data: {
-        noteId: noteid.id,
-        title: noteid.title,
-        description: noteid.description,
+        noteid,
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
+      this.getNoteList.emit();
     });
   }
 
