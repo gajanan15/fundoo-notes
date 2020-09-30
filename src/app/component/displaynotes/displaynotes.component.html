@@ -1,33 +1,48 @@
-<div fxLayout="row wrap" fxLayoutAlign="start none" 
-     fxLayoutAlign.xs="center none" fxLayoutAlign.sm="center none" 
-     class="main-notes">
-    <div *ngFor="let note of notes"  class="sub-main">
-        <div class="note-card-dive" >
-            <mat-card class="card-data" >
-                <mat-card-content >
-                    <div fxLayout="column" class="take-note" (click)="openDialog(note)">
-                        <div class="title-div">
-                              <input class="add-note-input" value="{{note.title}}"
-                               matInput placeholder="Title" />
-                          </div>
-                          <div class="title-div">
-                              <input class="add-note-input" 
-                              value="{{note.description}}" matInput placeholder="Take a note...." />
-                          </div>
-                    </div>
-                    <div fxLayout="row">
-                        <div>
-                            <app-colorpalette></app-colorpalette>
-                        </div>
-                        <div>
-                            <app-archive-icon (click)="addToArchive(note)"></app-archive-icon>
-                        </div>
-                        <div>
-                            <app-delete-icon (click)="addToTrash(note)"></app-delete-icon>
-                        </div>
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
+<div
+  fxLayout="row wrap"
+  fxLayoutAlign="start none"
+  fxLayoutAlign.xs="center none"
+  fxLayoutAlign.sm="center none"
+  class="main-notes"
+>
+  <div *ngFor="let note of notes" class="sub-main">
+    <div class="note-card-dive">
+      <mat-card class="card-data">
+        <mat-card-content>
+          <div fxLayout="column" class="take-note" (click)="openDialog(note)">
+            <div class="title-div">
+              <input
+                class="add-note-input"
+                value="{{ note.title }}"
+                matInput
+                placeholder="Title"
+              />
+            </div>
+            <div class="title-div">
+              <input
+                class="add-note-input"
+                value="{{ note.description }}"
+                matInput
+                placeholder="Take a note...."
+              />
+            </div>
+          </div>
+          <div fxLayout="row">
+            <div>
+              <app-colorpalette></app-colorpalette>
+            </div>
+            <div>
+              <app-archive-icon
+                [note]="note"
+                (getList)="getNoteList.emit()"
+              ></app-archive-icon>
+            </div>
+            <div>
+              <app-delete-icon (click)="addToTrash(note)"></app-delete-icon>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </div>
+  </div>
 </div>

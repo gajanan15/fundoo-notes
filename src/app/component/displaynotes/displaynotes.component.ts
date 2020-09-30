@@ -39,26 +39,8 @@ export class DisplaynotesComponent implements OnInit {
     });
   }
 
-  addToArchive(noteid) {
-    this.noteId = [noteid.id];
-    this.archive = noteid.isArchived;
-    var data = {
-      isArchived: true,
-      noteIdList: this.noteId,
-    };
-    this.httpGetAllNote.addArchiveNote(data).subscribe(
-      (response) => {
-        console.log('Archive Notes: ', response);
-        this.getNoteList.emit();
-      },
-      (error) => {
-        console.log('Archive Error: ', error);
-      }
-    );
-  }
-
-  addToTrash(noteid) {
-    this.noteId = [noteid.id];
+  addToTrash() {
+    this.noteId = this.notes;
     var data = {
       isDeleted: true,
       noteIdList: this.noteId,
