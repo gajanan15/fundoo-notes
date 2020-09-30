@@ -27,7 +27,7 @@ h1.example-app-name {
   background-color: white;
 }
 
-.side-div{
+.side-div {
   width: 20%;
 }
 
@@ -85,38 +85,101 @@ h1.example-app-name {
   height: 100%;
 }
 
-.logout-main{
+.logout-main {
   position: absolute;
-  transform: translate(400%,40%);
+  transform: translate(400%, 40%);
   z-index: 999;
 }
 
-.logout-card-main{
+.logout-card-main {
   width: 100%;
   height: 100%;
 }
 
-.logout-img-user{
+.logout-img-user {
   width: 230px;
 }
 
-.user-details{
+.user-details {
   margin-top: 2%;
 }
 
-.logout-btn{
+.logout-btn {
   padding-left: 3%;
-  padding-right: 3%
+  padding-right: 3%;
 }
 
-@media only screen and (min-device-width: 300px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
-  .side-div{
+@media only screen and (min-device-width: 300px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 1) {
+  .side-div {
     width: 40%;
+  }
+
+  .userIcon {
+    margin-left: 10%;
+  }
+
+  #search-text-div {
+    display: none;
+  }
+
+  #serach-input {
+    display: none;
+  }
+
+  .search {
+    width: 0%;
+    height: 10%;
+    border-radius: 10px;
+    background-color: #f1f3f4;
+    outline: none;
+  }
+
+  .logout-main {
+    transform: translate(17%, 40%);
   }
 }
 
-@media only screen and (min-device-width: 411px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 1) {
-  .side-div{
-    width: 40%;
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+  .logout-main {
+    transform: translate(174%, 40%);
   }
 }
+
+@media only screen and (min-device-width: 1020px) and (max-device-width: 1300px) {
+  .logout-main {
+    transform: translate(273%, 40%);
+  }
+}
+
+// @media only screen and (min-device-width: 411px) and (max-device-width: 750px) and (-webkit-min-device-pixel-ratio: 1) {
+//   .side-div{
+//     width: 40%;
+//   }
+
+//   .userIcon {
+//     margin-left: 21%;
+//   }
+
+//   #search-text-div {
+//     display: none;
+//   }
+
+//   #serach-input {
+//     display: none;
+//   }
+
+//   .search {
+//     width: 0%;
+//     height: 10%;
+//     border-radius: 10px;
+//     background-color: #f1f3f4;
+//     outline: none;
+//     background-color: red;
+//   }
+
+//   .logout-main{
+//     position: absolute;
+//     transform: translate(38%,40%);
+//     z-index: 999;
+//   }
+// }

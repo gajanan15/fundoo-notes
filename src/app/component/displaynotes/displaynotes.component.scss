@@ -1,19 +1,18 @@
-.note-card-dive{
+.sub-main {
+  min-height: 20%;
+  width: 200px;
+  margin: 1%;
+
+  .note-card-dive {
     height: 100%;
     width: 100%;
-}
-  
-.sub-main{
-    min-height: 20%;
-    width: 200px;
-    margin: 1%;
-}
+  }
 
-.card-data:hover{
+  .card-data:hover {
     box-shadow: 1px 6px 9px 0 rgba(0, 0, 0, 0.2);
-}
+  }
 
-.take-note {
+  .take-note {
     width: 180px;
     min-height: 41px;
   }
@@ -23,21 +22,22 @@
     height: 30px;
   }
 
-  .add-note-input{
+  .add-note-input {
     outline: none;
     border: none;
     font-size: 0.875rem;
-  font-weight: 500;
+    font-weight: 500;
   }
-  
+}
+
 @media only screen and (min-device-width: 300px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
-    .main-notes{
-        padding-top: 6%;
-    }
+  .main-notes {
+    padding-top: 6%;
   }
-  
-  @media only screen and (min-device-width: 411px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 1) {
-    .main-notes{
-        padding-top: 6%;
-    }
+}
+
+@media only screen and (min-device-width: 411px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 1) {
+  .main-notes {
+    padding-top: 6%;
   }
+}

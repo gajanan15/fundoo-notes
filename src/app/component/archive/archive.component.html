@@ -1,27 +1,8 @@
-<div fxLayout="row wrap" fxLayoutAlign="start none" class="main-archive">
-  <div *ngFor="let note of archiveNoteList" class="sub-main">
-      <div class="note-card-dive">
-          <mat-card class="card-data" >
-              <mat-card-content>
-                  <p><b>{{note.title}}</b></p>
-                  <p>{{note.description}}</p>
-                  <div fxLayout="row">
-                      <div>
-                          <app-colorpalette></app-colorpalette>
-                      </div>
-                      <div>
-                          <img
-                              matTooltip="Unarchive"
-                              width="100%" height="80%" style="cursor: pointer"
-                              src="../../../assets/images/outline-unarchive.svg"
-                          />
-                      </div>&nbsp;&nbsp;
-                      <div>
-                        <mat-icon style="cursor: pointer;" matTooltip="Delete Note">delete_outline</mat-icon>
-                    </div>
-                  </div>
-              </mat-card-content>
-          </mat-card>
-      </div>
-  </div>
+<div
+  fxLayout="row wrap"
+  fxLayoutAlign="start none"
+  class="main-archive"
+  fxLayoutAlign.xs="center center"
+>
+  <app-displaynotes [notes]="archiveNoteList"></app-displaynotes>
 </div>
