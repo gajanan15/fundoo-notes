@@ -1,5 +1,4 @@
 import { NoteDialogboxComponent } from './../note-dialogbox/note-dialogbox.component';
-import { FundooService } from './../../services/user_service/fundoo.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -9,10 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./displaynotes.component.scss'],
 })
 export class DisplaynotesComponent implements OnInit {
-  constructor(
-    private httpGetAllNote: FundooService,
-    public dialog: MatDialog
-  ) {}
+  constructor(public dialog: MatDialog) {}
 
   @Input() notes: [];
   @Output() getNoteList = new EventEmitter<any>();
@@ -37,22 +33,5 @@ export class DisplaynotesComponent implements OnInit {
       console.log('The dialog was closed');
       this.getNoteList.emit();
     });
-  }
-
-  addToTrash() {
-    this.noteId = this.notes;
-    var data = {
-      isDeleted: true,
-      noteIdList: this.noteId,
-    };
-    this.httpGetAllNote.addToTrash(data).subscribe(
-      (response) => {
-        console.log('Trash API: ', response);
-        this.getNoteList.emit();
-      },
-      (error) => {
-        console.log('Trash Error: ', error);
-      }
-    );
   }
 }
