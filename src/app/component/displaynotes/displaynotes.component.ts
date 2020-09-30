@@ -1,6 +1,13 @@
 import { NoteDialogboxComponent } from './../note-dialogbox/note-dialogbox.component';
 import { FundooService } from './../../services/user_service/fundoo.service';
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
@@ -15,6 +22,7 @@ export class DisplaynotesComponent implements OnInit {
   ) {}
 
   @Input() notes: [];
+  @Output() getNoteList = new EventEmitter<any>();
 
   list: any = [];
   noteList: any = [];
@@ -49,7 +57,7 @@ export class DisplaynotesComponent implements OnInit {
     this.httpGetAllNote.addArchiveNote(data).subscribe(
       (response) => {
         console.log('Archive Notes: ', response);
-        // this.getAllNote();
+        this.getNoteList.emit();
       },
       (error) => {
         console.log('Archive Error: ', error);
@@ -66,7 +74,7 @@ export class DisplaynotesComponent implements OnInit {
     this.httpGetAllNote.addToTrash(data).subscribe(
       (response) => {
         console.log('Trash API: ', response);
-        // this.getAllNote();
+        this.getNoteList.emit();
       },
       (error) => {
         console.log('Trash Error: ', error);

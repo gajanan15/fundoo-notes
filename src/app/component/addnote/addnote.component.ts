@@ -1,5 +1,5 @@
 import { FundooService } from './../../services/user_service/fundoo.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-addnote',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addnote.component.scss'],
 })
 export class AddnoteComponent implements OnInit {
-  constructor(private httpPostAddNote: FundooService) { }
+  constructor(private httpPostAddNote: FundooService) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
+  @Output() getNoteList = new EventEmitter<any>();
 
   title: any;
   description: any;
@@ -31,6 +32,7 @@ export class AddnoteComponent implements OnInit {
       this.httpPostAddNote.addNote(noteData).subscribe(
         (response) => {
           console.log(response);
+          this.getNoteList.emit();
         },
         (error) => {
           console.log('Note Error: ', error);

@@ -1,6 +1,9 @@
 <div fxLayoutAlign="center none" class="main-note-div">
   <div fxLayout="column" class="sub-note-div">
-    <app-addnote></app-addnote>
-    <app-displaynotes [notes]="notes"></app-displaynotes>
+    <app-addnote (getNoteList)="getAllNote()"></app-addnote>
+    <app-displaynotes
+      [notes]="notes"
+      (getNoteList)="getAllNote()"
+    ></app-displaynotes>
   </div>
 </div>
