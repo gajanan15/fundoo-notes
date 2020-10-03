@@ -7,11 +7,11 @@
 >
   <div *ngFor="let note of notes" class="sub-main">
     <div class="note-card-dive">
-      <mat-card class="card-data">
+      <mat-card class="card-data" [ngStyle]="{'background-color': note.color}">
         <mat-card-content>
           <div fxLayout="column" class="take-note" (click)="openDialog(note)">
             <div class="title-div">
-              <input
+              <input [ngStyle]="{'background-color': note.color}"
                 class="add-note-input"
                 value="{{ note.title }}"
                 matInput
@@ -19,7 +19,7 @@
               />
             </div>
             <div class="title-div">
-              <input
+              <input [ngStyle]="{'background-color': note.color}"
                 class="add-note-input"
                 value="{{ note.description }}"
                 matInput
@@ -27,9 +27,11 @@
               />
             </div>
           </div>
-          <div fxLayout="row">
+          <div fxLayout="row" class="icon-menus">
             <div>
-              <app-colorpalette></app-colorpalette>
+              <app-colorpalette  [note]="note"
+              (getList)="getNoteList.emit()"
+              ></app-colorpalette>
             </div>
             <div>
               <app-archive-icon

@@ -1,6 +1,17 @@
 <img
   width="70%"
   height="70%"
-  style="cursor: pointer" matTooltip="Change Color"
+  style="cursor: pointer"
+  matTooltip="Change Color"
+  (click)="fieldClick()"
   src="../../../assets/images/outline_color_lens_black_18dp.png"
 />
+<div class="icons-container" *ngIf="isColorShow">
+  <div class="color-container">
+    <div
+      class="color-picker"
+      *ngFor="let x of colorArray"
+      [ngStyle]="{ 'background': x.color}" (click)="changeBackgroundColor(x.color)"
+    ></div>
+  </div>
+</div>

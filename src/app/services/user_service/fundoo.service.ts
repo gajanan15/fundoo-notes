@@ -17,8 +17,7 @@ export class FundooService {
   };
 
   getUserLoggedIn(data) {
-    return this.http.postService(data, this.baseUrl + `user/login`, false, this.httpOptions
-    );
+    return this.http.postService(data, `${this.baseUrl}user/login`);
   }
 
   addNote(data) {
@@ -48,5 +47,9 @@ export class FundooService {
 
   updateNotes(data){
      return this.http.postService(data,this.baseUrl + `notes/updateNotes`, true, this.httpOptions); 
+  }
+
+  changeColor(data){
+    return this.http.postService(data,this.baseUrl + `notes/changesColorNotes`,true,this.httpOptions);
   }
 }

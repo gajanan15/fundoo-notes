@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './displaynotes.component.html',
   styleUrls: ['./displaynotes.component.scss'],
 })
-export class DisplaynotesComponent implements OnInit {
+export class DisplaynotesComponent implements OnInit{
   constructor(public dialog: MatDialog) {}
 
   @Input() notes: [];
@@ -20,7 +20,8 @@ export class DisplaynotesComponent implements OnInit {
   title: any;
   description: any;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   openDialog(noteid) {
     const dialogRef = this.dialog.open(NoteDialogboxComponent, {

@@ -1,5 +1,10 @@
 <div fxLayoutAlign="center center" class="display-notes">
-  <div (click)="fieldClick()" *ngIf="isTrue" fxLayout="column" class="take-note">
+  <div
+    (click)="fieldClick()"
+    *ngIf="isTrue"
+    fxLayout="column"
+    class="take-note"
+  >
     <div class="title-div">
       <mat-card fxLayoutAlign="start center">
         <input class="add-note-input" matInput placeholder="Take a note...." />
@@ -14,7 +19,12 @@
     </div>
     <div class="title-div">
       <mat-card fxLayoutAlign="start center">
-        <input #desc class="add-note-input" matInput placeholder="Take a note...." />
+        <input
+          #desc
+          class="add-note-input"
+          matInput
+          placeholder="Take a note...."
+        />
       </mat-card>
     </div>
     <div class="title-div">
@@ -26,9 +36,6 @@
             </div>
             <div>
               <app-archive-icon></app-archive-icon>
-            </div>
-            <div>
-              <app-delete-icon></app-delete-icon>
             </div>
           </div>
           <div fxLayoutAlign="end end" class="button" *ngIf="!isTrue">

@@ -14,7 +14,7 @@ import {
 export class NoteDialogboxComponent implements OnInit {
   noteTitle: string;
   noteDescription: string;
-  id;
+  id; color;
 
   constructor(
     public dialogRef: MatDialogRef<NoteDialogboxComponent>,
@@ -27,6 +27,7 @@ export class NoteDialogboxComponent implements OnInit {
     this.noteTitle = this.data.noteid.title;
     this.noteDescription = this.data.noteid.description;
     this.id = this.data.noteid.id;
+    this.color = this.data.noteid.color;
   }
 
   updateNote() {
